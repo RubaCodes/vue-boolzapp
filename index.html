@@ -22,7 +22,7 @@
   <body
     class="h-[100vh] bg-green-100 grid place-items-center"
     style="
-      background: linear-gradient(to bottom, rgb(0, 150, 136) 20%, white 20%);
+      background: linear-gradient(to bottom, rgb(0, 150, 136) 200px, white 20%);
     "
   >
     <!-- box app -->
@@ -76,6 +76,7 @@
             class="text-center w-5/6 py-1 rounded-tr-lg rounded-br-lg"
             placeholder="Cerca o inizia una nuova chat"
             type="text"
+            @submit.prevent
           />
         </form>
         <!-- sezione chat recenti -->
@@ -126,7 +127,7 @@
         </header>
         <!-- chat -->
         <div
-          class="h-[calc(80vh-146px)] bg-auto"
+          class="h-[calc(80vh-146px)] bg-auto overflow-auto"
           style="background-image: url(img/mine.jpg)"
         >
           <div class="container w-5/6 mx-auto py-8 flex flex-col gap-8">
@@ -146,12 +147,17 @@
           <i
             class="fa-solid fa-face-smile flex items-center text-slate-500 text-2xl"
           ></i>
-          <form class="flex justify-center w-5/6 bg-slate-200">
+          <form
+            @submit.prevent="sendMessage(currentChat)"
+            class="flex justify-center w-5/6 bg-slate-200"
+          >
             <input
               required
-              class="text-center w-full py-2 rounded-lg border border-slate-400"
+              class="w-full py-2 px-3 rounded-lg border border-slate-400"
               placeholder="Scrivi un nuovo messaggio"
               type="text"
+              v-model="newTextMessage"
+              @key-up.enter="sendMessage(currentChat)"
             />
           </form>
           <i

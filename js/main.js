@@ -5,15 +5,21 @@ const app = new Vue({
   data: {
     contacts,
     currentChat: 0,
+    newTextMessage: '',
   },
   methods: {
     chatSelect(index) {
       this.currentChat = index;
     },
+    sendMessage(index) {
+      console.log(this.newTextMessage, index, this.contacts[index]);
+      this.contacts[index].messages.push({
+        date: '10/01/2020 15:30:55',
+        message: this.newTextMessage,
+        status: 'sent',
+      });
+      this.newTextMessage = '';
+    },
   },
-  computed: {
-    // fixAvatar() {
-    //   return (this.avatar = `img/avatar${this.contacts.avatar}.jpg`);
-    // },
-  },
+  computed: {},
 });
