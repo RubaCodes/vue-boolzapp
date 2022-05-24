@@ -8,4 +8,7 @@ const app = new Vue({
   methods: {
     //metodi
   },
+  computed: {
+    //computed
+  },
 });

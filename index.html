@@ -76,18 +76,24 @@
         <!-- da fixare l'altezza -->
         <div class="bg-white">
           <div
-            class="flex justify-between align-center px-3 py-2 bg-slate-100 hover:bg-slate-200"
+            class="flex justify-between align-center px-3 py-2 bg-slate-100 hover:bg-slate-200 relative"
+            v-for="(contact,index) in contacts"
           >
             <div class="flex gap-3 items-center" id="user">
               <img
-                class="rounded-full w-14"
-                src="img/avatar_io.jpg"
+                class="rounded-full w-16"
+                src="img/avatar_1.jpg"
                 alt="genoveffa"
               />
               <div>
-                <div class="text-lg">Genoveffa</div>
-                <div class="underline text-slate-500 text-sm">last text</div>
+                <div class="text-lg">{{contact.name}}</div>
+                <div class="text-slate-500 text-xs">
+                  {{contact.messages[contact.messages.length -1].message}}
+                </div>
               </div>
+            </div>
+            <div class="absolute top-0 right-0">
+              <p class="p-2 text-slate-400 text-sm">orario last text</p>
             </div>
           </div>
         </div>
@@ -97,8 +103,19 @@
         <header
           class="flex justify-between align-center px-3 py-2 bg-slate-200"
         >
-          <div id="user">userphoto e name</div>
-          <div>icone di stato</div>
+          <div class="flex gap-3 items-center" id="user">
+            <img
+              class="rounded-full w-14"
+              src="img/avatar_io.jpg"
+              alt="genoveffa"
+            />
+            <span class="text-base">Genoveffa</span>
+          </div>
+          <div class="flex items-center gap-4 text-lg text-slate-500">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
         </header>
       </main>
     </div>
