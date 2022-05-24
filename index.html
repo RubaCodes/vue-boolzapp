@@ -73,7 +73,6 @@
           />
         </form>
         <!-- sezione chat recenti -->
-        <!-- da fixare l'altezza e l'overflow -->
         <div class="h-[calc(80vh-194px)] overflow-auto">
           <div
             class="flex justify-between align-center px-3 py-2 bg-slate-100 hover:bg-slate-200 relative"
@@ -125,21 +124,22 @@
         ></div>
         <!-- footer chat -->
         <footer
-          class="flex justify-between align-center px-3 py-2 bg-slate-200 absolute bottom-0 left-0 right-0"
+          class="flex justify-center align-center px-8 py-4 bg-slate-200 absolute bottom-0 left-0 right-0 gap-8"
         >
-          <div class="flex gap-3 items-center">
-            <img
-              class="rounded-full w-14"
-              src="img/avatar_io.jpg"
-              alt="genoveffa"
+          <i
+            class="fa-solid fa-face-smile flex items-center text-slate-500 text-2xl"
+          ></i>
+          <form class="flex justify-center w-5/6 bg-slate-200">
+            <input
+              required
+              class="text-center w-full py-2 rounded-lg"
+              placeholder="Scrivi un nuovo messaggio"
+              type="text"
             />
-            <span class="text-base">Genoveffa</span>
-          </div>
-          <div class="flex items-center gap-4 text-lg text-slate-500">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-paperclip"></i>
-            <i class="fa-solid fa-ellipsis-vertical"></i>
-          </div>
+          </form>
+          <i
+            class="fa-solid fa-microphone flex items-center text-slate-500 text-2xl"
+          ></i>
         </footer>
       </main>
     </div>
