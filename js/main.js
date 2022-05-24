@@ -9,6 +9,8 @@ const app = new Vue({
     //metodi
   },
   computed: {
-    //computed
+    // fixAvatar() {
+    //   return (this.avatar = `img/avatar${this.contacts.avatar}.jpg`);
+    // },
   },
 });
