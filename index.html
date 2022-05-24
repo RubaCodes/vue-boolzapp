@@ -10,7 +10,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Document</title>
   </head>
-  <body>
+  <body class="h-[100vh] bg-green-100 grid place-items-center">
+    <!-- box app -->
+    <div class="w-3/4 flex" id="app">
+      <!-- colonna contatti -->
+      <aside class="w-1/4" id="contacts">
+        <header
+          class="flex justify-between align-center px-3 py-2 bg-slate-200"
+        >
+          <div id="user">userphoto e name</div>
+          <div>icone di stato</div>
+        </header>
+      </aside>
+      <!-- colonna chat -->
+      <main class="w-3/4" id="chat">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, hic
+        tempora? Accusamus quo reprehenderit ab blanditiis aut sit similique
+        vitae eum quae illum excepturi at eos culpa, voluptatum officiis
+        dolores.
+      </main>
+    </div>
     <!-- my script  -->
     <script type="module" src="js/main.js"></script>
   </body>
