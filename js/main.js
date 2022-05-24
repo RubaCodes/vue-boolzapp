@@ -4,9 +4,12 @@ const app = new Vue({
   el: '#app',
   data: {
     contacts,
+    currentChat: 0,
   },
   methods: {
-    //metodi
+    chatSelect(index) {
+      this.currentChat = index;
+    },
   },
   computed: {
     // fixAvatar() {

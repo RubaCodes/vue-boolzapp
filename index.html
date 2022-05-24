@@ -83,6 +83,7 @@
           <div
             class="flex justify-between align-center px-3 py-2 bg-slate-100 hover:bg-slate-200 relative"
             v-for="(contact,index) in contacts"
+            @click="chatSelect(index)"
           >
             <div class="flex gap-3 items-center" id="user">
               <img
@@ -125,9 +126,19 @@
         </header>
         <!-- chat -->
         <div
-          class="h-[calc(80vh-144px)] bg-auto"
+          class="h-[calc(80vh-146px)] bg-auto"
           style="background-image: url(img/mine.jpg)"
-        ></div>
+        >
+          <div class="container w-5/6 mx-auto py-8 flex flex-col gap-8">
+            <div
+              class="messaggio rounded-lg inline-block py-3 px-3 text-sm w-[300px]"
+              :class="{'self-end' : contact.status == 'sent', 'bg-green-300' : contact.status == 'sent','bg-white' : contact.status !== 'sent'}"
+              v-for="contact in contacts[currentChat].messages"
+            >
+              {{contact.message}}
+            </div>
+          </div>
+        </div>
         <!-- footer chat -->
         <footer
           class="flex justify-center align-center px-8 py-4 bg-slate-200 absolute bottom-0 left-0 right-0 gap-8"
@@ -138,7 +149,7 @@
           <form class="flex justify-center w-5/6 bg-slate-200">
             <input
               required
-              class="text-center w-full py-2 rounded-lg"
+              class="text-center w-full py-2 rounded-lg border border-slate-400"
               placeholder="Scrivi un nuovo messaggio"
               type="text"
             />
