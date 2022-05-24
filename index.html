@@ -12,7 +12,7 @@
   </head>
   <body class="h-[100vh] bg-green-100 grid place-items-center">
     <!-- box app -->
-    <div class="w-3/4 flex" id="app">
+    <div class="w-3/4 h-5/6 flex" id="app">
       <!-- colonna contatti -->
       <aside class="w-1/4" id="contacts">
         <header
@@ -21,9 +21,11 @@
           <div id="user">userphoto e name</div>
           <div>icone di stato</div>
         </header>
+        <!-- attivazione notifiche -->
         <div class="py-2 px-3 bg-blue-200" id="do-not-disturb">
           icona e status nofiche
         </div>
+        <!-- form ricerca -->
         <form class="flex px-3 py-2 w-full">
           <button class="py-1 px-2 w-1/6 bg-red-200">🔍️</button>
           <input
@@ -32,6 +34,11 @@
             type="text"
           />
         </form>
+        <!-- sezione chat recenti -->
+        <!-- da fixare l'altezza -->
+        <div class="bg-white">
+          <div></div>
+        </div>
       </aside>
       <!-- colonna chat -->
       <main class="w-3/4" id="chat">
