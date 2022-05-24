@@ -21,5 +21,22 @@ const app = new Vue({
       this.newTextMessage = '';
     },
   },
-  computed: {},
+  computed: {
+    filteredDate() {
+      //filtraggio data
+    },
+    filteredHours() {
+      //filtraggio Ore
+    },
+    filteredName() {
+      //filtraggio nomi
+    },
+  },
 });
+
+// da fare:
+// -fix avatar
+// -filtraggio chatSelect
+// -filtraggio date/giorno
+
+// -cazzatine
