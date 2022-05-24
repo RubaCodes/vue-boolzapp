@@ -142,11 +142,14 @@
         >
           <div class="container w-5/6 mx-auto py-8 flex flex-col gap-8">
             <div
-              class="messaggio rounded-lg inline-block py-3 px-3 text-sm w-[300px]"
+              class="messaggio rounded-lg inline-block py-3 px-3 text-sm w-[300px] relative"
               :class="{'self-end' : contact.status == 'sent', 'bg-green-300' : contact.status == 'sent','bg-white' : contact.status !== 'sent'}"
               v-for="contact in contacts[currentChat].messages"
             >
               {{contact.message}}
+              <div class="absolute bottom-0 right-1 text-xs text-slate-400">
+                {{contact.date}}
+              </div>
             </div>
           </div>
         </div>
