@@ -1,5 +1,6 @@
 import { contacts } from './contacts.js';
-const app = new VTTCue({
+
+const app = new Vue({
   el: '#app',
   data: {
     contacts,
