@@ -10,7 +10,7 @@ const app = new Vue({
   },
   methods: {
     chatSelect(index) {
-      this.currentChat = index;
+      this.currentChat = this.filteredName[index].index;
     },
     sendMessage(index) {
       console.log(this.newTextMessage, index, this.contacts[index]);
@@ -30,9 +30,19 @@ const app = new Vue({
       //filtraggio Ore
     },
     filteredName() {
-      return this.contacts.filter((e) =>
+      let filter = this.contacts.filter((e) =>
         e.name.toLowerCase().includes(this.searchChat)
       );
+      console.log(
+        filter.map((e) => ({ name: e.name, index: this.contacts.indexOf(e) }))
+      );
+      return filter.map((e) => ({
+        name: e.name,
+        active: e.active,
+        avatar: e.avatar,
+        messages: e.messages,
+        index: this.contacts.indexOf(e),
+      }));
     },
   },
 });
