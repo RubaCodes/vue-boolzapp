@@ -1,5 +1,10 @@
 import { contacts } from './contacts.js';
 
+let dt = luxon.DateTime.now()
+  .setLocale('it')
+  .toLocaleString(luxon.DateTime.TIME_SIMPLE);
+console.log(dt);
+
 const app = new Vue({
   el: '#app',
   data: {
@@ -14,7 +19,7 @@ const app = new Vue({
     },
     sendMessage(index) {
       this.contacts[index].messages.push({
-        date: '10/01/2020 15:30:55',
+        date: dt,
         message: this.newTextMessage,
         status: 'sent',
       });
@@ -24,7 +29,7 @@ const app = new Vue({
     messagecheck(contact) {
       setTimeout(() => {
         contact.messages.push({
-          date: luxon.DateTime.now().toString(),
+          date: dt,
           message: 'Messaggio Ricevuto',
           status: 'received',
         });
