@@ -69,7 +69,10 @@
           </div>
         </div>
         <!-- form ricerca -->
-        <form class="flex divide-x px-3 py-2 w-full bg-slate-200">
+        <form
+          @submit.prevent
+          class="flex divide-x px-3 py-2 w-full bg-slate-200"
+        >
           <button
             class="py-1 px-2 w-1/6 bg-slate-100 rounded-tl-lg rounded-bl-lg"
           >
@@ -79,14 +82,14 @@
             class="text-center w-5/6 py-1 rounded-tr-lg rounded-br-lg"
             placeholder="Cerca o inizia una nuova chat"
             type="text"
-            @submit.prevent
+            v-model="searchChat"
           />
         </form>
         <!-- sezione chat recenti -->
         <div class="h-[calc(80vh-194px)] overflow-auto">
           <div
             class="flex justify-between align-center px-3 py-2 bg-slate-100 hover:bg-slate-200 relative"
-            v-for="(contact,index) in contacts"
+            v-for="(contact,index) in filteredName"
             @click="chatSelect(index)"
           >
             <div class="flex gap-3 items-center" id="user">

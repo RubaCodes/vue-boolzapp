@@ -6,6 +6,7 @@ const app = new Vue({
     contacts,
     currentChat: 0,
     newTextMessage: '',
+    searchChat: '',
   },
   methods: {
     chatSelect(index) {
@@ -23,19 +24,20 @@ const app = new Vue({
   },
   computed: {
     filteredDate() {
-      //filtraggio data
+      return;
     },
     filteredHours() {
       //filtraggio Ore
     },
     filteredName() {
-      //filtraggio nomi
+      return this.contacts.filter((e) =>
+        e.name.toLowerCase().includes(this.searchChat)
+      );
     },
   },
 });
 
 // da fare:
-// -fix avatar
 // -filtraggio chatSelect
 // -filtraggio date/giorno
 
