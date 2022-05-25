@@ -92,7 +92,7 @@
             <div class="flex gap-3 items-center" id="user">
               <img
                 class="rounded-full w-16"
-                src="img/avatar_1.jpg"
+                :src="`img/avatar${contact.avatar}.jpg`"
                 :alt="contact.name"
               />
               <div>
@@ -117,7 +117,7 @@
           <div class="flex gap-3 items-center" id="user">
             <img
               class="rounded-full w-14"
-              src="img/avatar_io.jpg"
+              :src="`img/avatar${contacts[currentChat].avatar}.jpg`"
               alt="genoveffa"
             />
             <div>
