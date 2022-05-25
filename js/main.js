@@ -13,13 +13,22 @@ const app = new Vue({
       this.currentChat = this.filteredName[index].index;
     },
     sendMessage(index) {
-      console.log(this.newTextMessage, index, this.contacts[index]);
       this.contacts[index].messages.push({
         date: '10/01/2020 15:30:55',
         message: this.newTextMessage,
         status: 'sent',
       });
       this.newTextMessage = '';
+      this.messagecheck(this.contacts[index]);
+    },
+    messagecheck(contact) {
+      setTimeout(() => {
+        contact.messages.push({
+          date: '10/01/2020 15:30:55',
+          message: 'Messaggio Ricevuto',
+          status: 'received',
+        });
+      }, 1000);
     },
   },
   computed: {
@@ -32,9 +41,6 @@ const app = new Vue({
     filteredName() {
       let filter = this.contacts.filter((e) =>
         e.name.toLowerCase().includes(this.searchChat)
-      );
-      console.log(
-        filter.map((e) => ({ name: e.name, index: this.contacts.indexOf(e) }))
       );
       return filter.map((e) => ({
         name: e.name,
