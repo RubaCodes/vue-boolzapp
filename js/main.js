@@ -24,7 +24,7 @@ const app = new Vue({
     messagecheck(contact) {
       setTimeout(() => {
         contact.messages.push({
-          date: '10/01/2020 15:30:55',
+          date: luxon.DateTime.now().toString(),
           message: 'Messaggio Ricevuto',
           status: 'received',
         });
