@@ -137,7 +137,7 @@
                 Ultimo accesso: {{contacts[currentChat].messages.length - 1 >= 0
                 ?
                 getTime(contacts[currentChat].messages[contacts[currentChat].messages.length
-                - 1]) : ''}}
+                - 1]) : 'Inizia la conversazione per ottenere il dato'}}
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@
               <div class="absolute top-0 right-1 text-xs text-slate-400">
                 <i
                   class="fa-solid fa-chevron-down text-sm opacity-0 hover:opacity-100 ease-in-out duration-200"
-                  @click="cickToDialog(contact, index)"
+                  @click="clickToDialog(contact, index)"
                 ></i>
               </div>
               <!-- select edit -->
@@ -175,9 +175,10 @@
                 v-show="processingDelete"
               >
                 <div
+                  @click="clickToDialog(contact, index)"
                   class="text-sm text-slate-500 bg-white px-3 py-1 hover:bg-slate-200"
                 >
-                  Informazioni messaggio
+                  Informazioni messaggio (chiudi menu)
                 </div>
                 <div
                   class="text-sm text-slate-500 bg-white px-3 py-1 hover:bg-slate-200"

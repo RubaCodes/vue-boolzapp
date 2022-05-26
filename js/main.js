@@ -52,7 +52,7 @@ const app = new Vue({
         .toFormat('HH:mm');
     },
     //Dialog e funzione cancella messaggi
-    cickToDialog(message, index) {
+    clickToDialog(message, index) {
       if (index == message.index) {
         console.log(index, message.index);
         this.processingDelete = !this.processingDelete;
