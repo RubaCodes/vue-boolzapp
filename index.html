@@ -165,12 +165,14 @@
               >
                 <i
                   class="fa-solid fa-chevron-down text-sm opacity-0 hover:opacity-100 ease-in-out duration-200"
+                  @click="processingDelete = !processingDelete"
                 ></i>
               </div>
               <!-- select edit -->
               <div
                 :class="{ 'hidden' : contact.status == 'received'}"
                 class="absolute top-3 right-4 divide-y rounded overflow-hidden"
+                v-show="processingDelete"
               >
                 <div
                   class="text-sm text-slate-500 bg-white px-3 py-1 hover:bg-slate-200"

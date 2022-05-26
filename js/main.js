@@ -2,13 +2,14 @@ import { contacts } from './contacts.js';
 
 let dt = luxon.DateTime;
 let format = luxon.DateTime.now().toLocaleString(luxon.DateTime.TIME_SIMPLE);
-console.log(dt);
+//console.log(dt);
 
 const app = new Vue({
   el: '#app',
   data: {
     contacts,
     currentChat: 0,
+    processingDelete: false,
     newTextMessage: '',
     searchChat: '',
   },
