@@ -8,7 +8,6 @@ const app = new Vue({
   data: {
     contacts,
     currentChat: 0,
-    processingDelete: false,
     newTextMessage: '',
     searchChat: '',
   },
@@ -18,7 +17,7 @@ const app = new Vue({
       return this.contacts.forEach((element) => {
         element.messages = element.messages.map((obj) => ({
           ...obj,
-          index: element.messages.indexOf(obj),
+          active: false,
         }));
       });
     },
@@ -55,7 +54,6 @@ const app = new Vue({
     clickToDialog(message, index) {
       if (index == message.index) {
         console.log(index, message.index);
-        this.processingDelete = !this.processingDelete;
       }
     },
     deleteMessage(index) {
