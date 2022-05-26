@@ -39,6 +39,10 @@ const app = new Vue({
         .fromFormat(message.date, 'dd/MM/yyyy HH:mm:ss')
         .toFormat('HH:mm');
     },
+    deleteMessage(contact, index) {
+      console.log(contact);
+      this.contacts[this.currentChat].messages.splice(index, 1);
+    },
   },
   computed: {
     filteredDate() {

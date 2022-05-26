@@ -152,7 +152,7 @@
             <div
               class="messaggio rounded-lg inline-block py-3 px-3 text-sm w-[300px] relative"
               :class="{'self-end' : contact.status == 'sent', 'bg-green-300' : contact.status == 'sent','bg-white' : contact.status !== 'sent'}"
-              v-for="contact in contacts[currentChat].messages"
+              v-for="(contact,index) in contacts[currentChat].messages"
             >
               {{contact.message}}
               <div class="absolute bottom-0 right-1 text-xs text-slate-400">
@@ -179,6 +179,7 @@
                 </div>
                 <div
                   class="text-sm text-slate-500 bg-white px-3 py-1 hover:bg-slate-200"
+                  @click="deleteMessage(index)"
                 >
                   Elimina Messaggio
                 </div>
