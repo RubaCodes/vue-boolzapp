@@ -13,9 +13,11 @@ const app = new Vue({
     searchChat: '',
   },
   methods: {
+    //funzione selezione chat
     chatSelect(index) {
       this.currentChat = this.filteredName[index].index;
     },
+    //funz per send message e check
     sendMessage(index) {
       this.contacts[index].messages.push({
         date: dt.now().toFormat('dd/MM/yyyy HH:mm:ss'),
@@ -34,10 +36,15 @@ const app = new Vue({
         });
       }, 1000);
     },
+    //luxon per orari
     getTime(message) {
       return dt //se la mettessi in computed?
         .fromFormat(message.date, 'dd/MM/yyyy HH:mm:ss')
         .toFormat('HH:mm');
+    },
+    //Dialog e funzione cancella messaggi
+    cickToDialog(index) {
+      this.processingDelete = !this.processingDelete;
     },
     deleteMessage(contact, index) {
       console.log(contact);
