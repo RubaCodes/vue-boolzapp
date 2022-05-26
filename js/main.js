@@ -80,7 +80,3 @@ const app = new Vue({
     this.filteredMessages();
   },
 });
-
-// da fare:
-
-// -cazzatine
