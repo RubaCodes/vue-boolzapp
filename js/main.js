@@ -1,8 +1,7 @@
 import { contacts } from './contacts.js';
 
-let dt = luxon.DateTime.now()
-  .setLocale('it')
-  .toLocaleString(luxon.DateTime.TIME_SIMPLE);
+let dt = luxon.DateTime;
+let format = luxon.DateTime.now().toLocaleString(luxon.DateTime.TIME_SIMPLE);
 console.log(dt);
 
 const app = new Vue({
@@ -19,7 +18,7 @@ const app = new Vue({
     },
     sendMessage(index) {
       this.contacts[index].messages.push({
-        date: dt,
+        date: dt.now().toLocaleString(luxon.DateTime.TIME_SIMPLE),
         message: this.newTextMessage,
         status: 'sent',
       });
@@ -29,19 +28,21 @@ const app = new Vue({
     messagecheck(contact) {
       setTimeout(() => {
         contact.messages.push({
-          date: dt,
+          date: dt.now().toISO(),
           message: 'Messaggio Ricevuto',
           status: 'received',
         });
       }, 1000);
     },
+    getTime(message) {
+      return dt //se la mettessi in computed?
+        .fromFormat(message.date, 'dd/MM/yyyy HH:mm:ss')
+        .toFormat('HH:mm');
+    },
   },
   computed: {
     filteredDate() {
       return;
-    },
-    filteredHours() {
-      //filtraggio Ore
     },
     filteredName() {
       let filter = this.contacts.filter((e) =>

@@ -108,7 +108,10 @@
               </div>
             </div>
             <div class="absolute top-0 right-0">
-              <p class="p-2 text-slate-400 text-sm">orario last text</p>
+              <p class="p-2 text-slate-400 text-sm">
+                {{getTime(contacts[index].messages[contacts[index].messages.length
+                - 1])}}
+              </p>
             </div>
           </div>
         </div>
@@ -129,8 +132,8 @@
               <div class="text-base">{{contacts[currentChat].name}}</div>
               <div class="text-sm text-slate-400">
                 Ultimo accesso:
-                {{contacts[currentChat].messages[contacts[currentChat].messages.length
-                - 1].date}}
+                {{getTime(contacts[currentChat].messages[contacts[currentChat].messages.length
+                - 1])}}
               </div>
             </div>
           </div>
@@ -153,7 +156,7 @@
             >
               {{contact.message}}
               <div class="absolute bottom-0 right-1 text-xs text-slate-400">
-                {{contact.date}}
+                {{getTime(contact)}}
               </div>
               <!-- chevron edit -->
               <div
