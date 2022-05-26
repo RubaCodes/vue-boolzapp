@@ -46,9 +46,9 @@ const app = new Vue({
     cickToDialog(index) {
       this.processingDelete = !this.processingDelete;
     },
-    deleteMessage(contact, index) {
-      console.log(contact);
+    deleteMessage(index) {
       this.contacts[this.currentChat].messages.splice(index, 1);
+      console.log(this.contacts);
     },
   },
   computed: {
@@ -71,7 +71,5 @@ const app = new Vue({
 });
 
 // da fare:
-// -filtraggio chatSelect
-// -filtraggio date/giorno
 
 // -cazzatine

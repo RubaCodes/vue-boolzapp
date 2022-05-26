@@ -159,10 +159,7 @@
                 {{getTime(contact)}}
               </div>
               <!-- chevron edit -->
-              <div
-                :class="{ 'hidden' : contact.status == 'received'}"
-                class="absolute top-0 right-1 text-xs text-slate-400"
-              >
+              <div class="absolute top-0 right-1 text-xs text-slate-400">
                 <i
                   class="fa-solid fa-chevron-down text-sm opacity-0 hover:opacity-100 ease-in-out duration-200"
                   @click="cickToDialog()"
@@ -170,7 +167,6 @@
               </div>
               <!-- select edit -->
               <div
-                :class="{ 'hidden' : contact.status == 'received'}"
                 class="absolute top-3 right-4 divide-y rounded overflow-hidden"
                 v-show="processingDelete"
               >
