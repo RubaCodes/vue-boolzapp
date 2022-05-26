@@ -31,6 +31,7 @@ const app = new Vue({
         date: dt.now().toFormat('dd/MM/yyyy HH:mm:ss'),
         message: this.newTextMessage,
         status: 'sent',
+        active: false,
       });
       this.newTextMessage = '';
       this.messagecheck(this.contacts[index]);
@@ -41,6 +42,7 @@ const app = new Vue({
           date: dt.now().toFormat('dd/MM/yyyy HH:mm:ss'),
           message: 'Messaggio Ricevuto',
           status: 'received',
+          active: false,
         });
       }, 1000);
     },
@@ -61,9 +63,6 @@ const app = new Vue({
     },
   },
   computed: {
-    filteredDate() {
-      return;
-    },
     filteredName() {
       let filter = this.contacts.filter((e) =>
         e.name.toLowerCase().includes(this.searchChat)
@@ -77,10 +76,7 @@ const app = new Vue({
       }));
     },
   },
-  created() {
-    this.filteredMessages();
-  },
-  beforeUpdate() {
+  mounted() {
     this.filteredMessages();
   },
 });
