@@ -82,6 +82,9 @@ const app = new Vue({
   created() {
     this.filteredMessages();
   },
+  beforeUpdate() {
+    this.filteredMessages();
+  },
 });
 
 // da fare:
