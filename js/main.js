@@ -48,7 +48,6 @@ const app = new Vue({
     },
     deleteMessage(index) {
       this.contacts[this.currentChat].messages.splice(index, 1);
-      console.log(this.contacts);
     },
   },
   computed: {
