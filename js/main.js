@@ -13,6 +13,15 @@ const app = new Vue({
     searchChat: '',
   },
   methods: {
+    //funz che aggiunge l'indice ai message
+    filteredMessages() {
+      return this.contacts.forEach((element) => {
+        element.messages = element.messages.map((obj) => ({
+          ...obj,
+          index: element.messages.indexOf(obj),
+        }));
+      });
+    },
     //funzione selezione chat
     chatSelect(index) {
       this.currentChat = this.filteredName[index].index;
@@ -66,6 +75,9 @@ const app = new Vue({
         index: this.contacts.indexOf(e),
       }));
     },
+  },
+  created() {
+    this.filteredMessages();
   },
 });
 
