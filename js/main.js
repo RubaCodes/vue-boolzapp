@@ -52,8 +52,11 @@ const app = new Vue({
         .toFormat('HH:mm');
     },
     //Dialog e funzione cancella messaggi
-    cickToDialog(index) {
-      this.processingDelete = !this.processingDelete;
+    cickToDialog(message, index) {
+      if (index == message.index) {
+        console.log(index, message.index);
+        this.processingDelete = !this.processingDelete;
+      }
     },
     deleteMessage(index) {
       this.contacts[this.currentChat].messages.splice(index, 1);
