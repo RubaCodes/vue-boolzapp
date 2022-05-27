@@ -52,12 +52,6 @@ const app = new Vue({
         .fromFormat(message.date, 'dd/MM/yyyy HH:mm:ss')
         .toFormat('HH:mm');
     },
-    //Dialog e funzione cancella messaggi
-    clickToDialog(message, index) {
-      if (index == message.index) {
-        console.log(index, message.index);
-      }
-    },
     deleteMessage(index) {
       this.contacts[this.currentChat].messages.splice(index, 1);
     },
