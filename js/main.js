@@ -59,7 +59,7 @@ const app = new Vue({
   computed: {
     filteredName() {
       let filter = this.contacts.filter((e) =>
-        e.name.toLowerCase().includes(this.searchChat)
+        e.name.toLowerCase().includes(this.searchChat.toLowerCase())
       );
       return filter.map((e) => ({
         name: e.name,
